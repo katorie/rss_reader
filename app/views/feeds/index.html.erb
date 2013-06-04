@@ -1,0 +1,7 @@
+<% @feeds.each do |feed| %>
+  <%= feed.url %>
+  <%= link_to "編集", edit_feed_path(feed) %>
+
+<% end %>
+
+<%= link_to '新規作成', new_feed_path %>
