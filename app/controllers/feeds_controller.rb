@@ -39,4 +39,8 @@ class FeedsController < ApplicationController
     @feed = Feed.destroy(params[:id])
     redirect_to feeds_path
   end
+
+  def cancel
+    redirect_to feeds_path
+  end
 end
