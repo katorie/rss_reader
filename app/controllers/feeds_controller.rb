@@ -40,7 +40,9 @@ class FeedsController < ApplicationController
     redirect_to feeds_path
   end
 
-  def cancel
-    redirect_to feeds_path
+  def cancel  #書き方？
+    if params[:commit] == "キャンセル"
+      redirect_to feeds_path
+    end
   end
 end
