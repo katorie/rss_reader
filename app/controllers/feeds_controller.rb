@@ -9,7 +9,10 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(params[:feed])
-    
+# models/feed.rbにうつした
+#    feed = Feedzirra::Feed.fetch_and_parse(params[:feed][:url])
+#    @feed.title = feed.title
+
     if @feed.save
       redirect_to feeds_path  #saveが成功したらindexへ
     else
@@ -32,7 +35,6 @@ class FeedsController < ApplicationController
       else
         render :edit
       end
-
   end
 
   def destroy
@@ -40,9 +42,4 @@ class FeedsController < ApplicationController
     redirect_to feeds_path
   end
 
-  def cancel  #書き方？
-    if params[:commit] == "キャンセル"
-      redirect_to feeds_path
-    end
-  end
 end

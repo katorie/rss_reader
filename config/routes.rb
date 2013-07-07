@@ -2,6 +2,8 @@ RssReader::Application.routes.draw do
 
   resources :feeds
 
+  resources :items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
