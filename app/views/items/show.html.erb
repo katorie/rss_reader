@@ -1,2 +1,7 @@
-<h1>Feeds#show</h1>
-<p>Find me in app/views/feeds/show.html.erb</p>
+<%= @item.title %>
+<br />
+<%= strip_tags(@item.body) %>
+<br />
+<%= link_to "元のページ", @item.url %>
+<br />
+<%= link_to "もどる", feeds_path %>

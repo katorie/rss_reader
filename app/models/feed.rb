@@ -3,7 +3,7 @@ class Feed < ActiveRecord::Base
 
   before_save :get_rss
 
-  has_many :items  
+  has_many :items, dependent: :destroy  
 
   private
 

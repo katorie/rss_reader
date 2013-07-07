@@ -3,7 +3,7 @@
   <%= feed.title %> <br />
   <% feed.items.each do |item| %>
     <%= item.title %> <br />
-    <%= item.body.truncate(50) %> <br />
+    <%= strip_tags(item.body.truncate(50)) %> <br />
     <%= link_to "もっと見る", item_path(item) %>
     <br />
   <% end %>
