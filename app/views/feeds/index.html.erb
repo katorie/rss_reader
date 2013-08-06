@@ -1,5 +1,8 @@
+<%= link_to '新規作成', new_feed_path %><br />
 <% @feeds.each do |feed| %>
   <%= feed.url %>
+  <%= link_to "編集", edit_feed_path(feed) %>
+  <%= button_to "削除", feed, method: :delete %>
   <%= feed.title %> <br />
   <% feed.items.each do |item| %>
     <%= item.title %> <br />
@@ -7,8 +10,4 @@
     <%= link_to "もっと見る", item_path(item) %>
     <br />
   <% end %>
-  <%= link_to "編集", edit_feed_path(feed) %>
-  <%= button_to "削除", feed, method: :delete %>
 <% end %>
-
-<%= link_to '新規作成', new_feed_path %>
