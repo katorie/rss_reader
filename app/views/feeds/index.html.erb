@@ -6,7 +6,9 @@
   <%= feed.title %> <br />
   <% feed.items.each do |item| %>
     <%= item.title %> <br />
+    <% if item.body %>
     <%= strip_tags(item.body.truncate(50)) %> <br />
+    <% end %>
     <%= link_to "もっと見る", item_path(item) %>
     <br />
   <% end %>
