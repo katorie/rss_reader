@@ -40,3 +40,7 @@ gem 'feed_searcher'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'haml-rails'
