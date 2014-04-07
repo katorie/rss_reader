@@ -1,0 +1,7 @@
+= @item.title
+%br/
+= strip_tags(@item.body)
+%br/
+= link_to "元のページ", @item.url
+%br/
+= link_to "もどる", feeds_path
