@@ -8,7 +8,7 @@ class Feed < ActiveRecord::Base
   private
 
   def get_rss
-    feed = Feedzirra::Feed.fetch_and_parse(self.url)
+    feed = Feedjira::Feed.fetch_and_parse(self.url)
     
     feed.entries.each do |entry|
       self.items.build({body: entry.content, title: entry.title, url: entry.url})

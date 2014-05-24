@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'feedzirra'
+gem 'feedjira'
 
 gem 'feed_searcher'
 
