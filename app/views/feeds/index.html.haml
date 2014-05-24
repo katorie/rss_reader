@@ -5,12 +5,16 @@
   = link_to "編集", edit_feed_path(feed)
   = button_to "削除", feed, method: :delete
   = feed.title
+
+%hr
+
+%br/
+- @items.each do |item|
+  = item.feed.title
+  = item.title
   %br/
-  - feed.items.each do |item|
-    = item.title
+  - if item.body
+    = strip_tags(item.body.truncate(50))
     %br/
-    - if item.body
-      = strip_tags(item.body.truncate(50))
-      %br/
-    = link_to "もっと見る", item_path(item)
-    %br/
+  = link_to "もっと見る", item_path(item)
+  %br/
