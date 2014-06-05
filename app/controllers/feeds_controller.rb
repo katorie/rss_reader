@@ -1,7 +1,7 @@
 class FeedsController < ApplicationController
   def index
     @feeds = Feed.all  #controllarにわたされる
-    @items = Item.order('created_at desc').includes(:feed).all
+    @items = Item.order('posted_at desc').includes(:feed).all
   end
 
   def new
