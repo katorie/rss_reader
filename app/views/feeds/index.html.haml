@@ -1,9 +1,10 @@
-= link_to '新規作成', new_feed_path
+= link_to 'あたらしく登録する', new_feed_path
 %br/
 - @feeds.each do |feed|
   = feed.url
-  = link_to "編集", edit_feed_path(feed)
-  = button_to "削除", feed, method: :delete
+/  = link_to "編集", edit_feed_path(feed)
+/ 編集することはないのかも？と思ってコメントアウトしておく。
+  = button_to "消す", feed, method: :delete
   = feed.title
 
 %hr
@@ -16,5 +17,5 @@
   - if item.body
     = strip_tags(item.body.truncate(50))
     %br/
-  = link_to "もっと見る", item_path(item)
+  = link_to "もっと読む", item_path(item)
   %br/
