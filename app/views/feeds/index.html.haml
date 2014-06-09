@@ -2,10 +2,9 @@
 %br/
 - @feeds.each do |feed|
   = feed.url
-/  = link_to "編集", edit_feed_path(feed)
-/ 編集することはないのかも？と思ってコメントアウトしておく。
   = button_to "消す", feed, method: :delete
   = feed.title
+/  = link_to "編集", edit_feed_path(feed)
 
 %hr
 
