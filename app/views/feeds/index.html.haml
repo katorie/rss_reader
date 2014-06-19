@@ -13,12 +13,12 @@
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav
           %li.active
-            %a{href: "#"} Active
+            %a{href: "feeds/new"} add new site
           %li
-            %a{href: "#"} Link
+            %a{href: "#"} all 
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              Dropdown
+              select site 
               %b.caret
             %ul.dropdown-menu
               %li
@@ -53,7 +53,7 @@
               %li
                 %a{href: "#"} Separated link
 
-%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
+/%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
 
 %h2 following site...
 %br/
