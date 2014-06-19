@@ -1,9 +1,9 @@
-= link_to 'あたらしく登録する', new_feed_path
+%button{:type => "button", :class => "btn btn-default"}= link_to 'あたらしく登録する', new_feed_path
 %br/
 - @feeds.each do |feed|
+  = feed.title
   = feed.url
   = button_to "消す", feed, method: :delete
-  = feed.title
 /  = link_to "編集", edit_feed_path(feed)
 
 %hr
