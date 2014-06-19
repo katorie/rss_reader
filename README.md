@@ -13,4 +13,4 @@
 3. `bundle install`
 4. `rake db:migrate`
 5. `rails server`
-6. open `http://localhost:3000/feeds`
+6. open `http://localhost:3000/`
