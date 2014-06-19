@@ -14,4 +14,3 @@
 4. `rake db:migrate`
 5. `rails server`
 6. open `http://localhost:3000/feeds`
-...sorry, under construction
