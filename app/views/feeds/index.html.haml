@@ -1,20 +1,30 @@
-= link_to '新規作成', new_feed_path
+!!!
+
+/ want to add nav bar
+
+%h1 RSS Reader!
+
+%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
+
+%h2 following site...
 %br/
 - @feeds.each do |feed|
-  = feed.url
-  = link_to "編集", edit_feed_path(feed)
-  = button_to "削除", feed, method: :delete
-  = feed.title
+  %h3= feed.title
+  %h5= feed.url
+  = link_to "delete", feed, method: :delete
+  %br/
+/  = link_to "編集", edit_feed_path(feed)
 
 %hr
 
+%h2 read items...
 %br/
 - @items.each do |item|
-  = item.feed.title
-  = item.title
+  %h3= item.feed.title
+  %h4= item.title
   %br/
   - if item.body
-    = strip_tags(item.body.truncate(50))
+    = strip_tags(item.body.truncate(200))
     %br/
-  = link_to "もっと見る", item_path(item)
+  %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "read more", item_path(item)
   %br/
