@@ -1,6 +1,9 @@
 # RSS Reader!
 "RSS Reader!" is made by @katorie 
 
+## Under development
+[現在の画面はこんな感じ](https://github.com/katorie/rss_reader/issues/22)
+
 ## Ruby
 '2.1.2'
 
