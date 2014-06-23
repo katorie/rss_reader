@@ -1,5 +1,5 @@
 # RSS Reader!
-"RSS Reader!" is made by @katorie 
+"RSS Reader!" is made by [@katorie](https://twitter.com/katorie)
 
 ## Under development
 [現在の画面はこんな感じ](https://github.com/katorie/rss_reader/issues/22)
@@ -9,6 +9,9 @@
 
 ## Ruby on Rails
 '3.2.14'
+
+## Bootstrap
+[Bootswatch: Amelia](http://bootswatch.com/amelia/)
 
 ## how to use
 1. `git clone https://github.com/katorie/rss_reader.git`
