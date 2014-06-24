@@ -1,25 +1,31 @@
 !!!
 /%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
-
-%h2 following site...
-%br/
-- @feeds.each do |feed|
-  %h3= feed.title
-  %h5= feed.url
-  = link_to "delete", feed, method: :delete
-  %br/
-/  = link_to "編集", edit_feed_path(feed)
-
-%hr
-
-%h2 read items...
-%br/
-- @items.each do |item|
-  %h3= item.feed.title
-  %h4= item.title
-  %br/
-  - if item.body
-    = strip_tags(item.body.truncate(200))
+%body
+  .side
+    %h2 following site...
     %br/
-  %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "read more", item_path(item)
-  %br/
+
+    - @feeds.each do |feed|
+      .panel.panel-default
+        .panel-body
+          %h4= feed.title
+          %h5= feed.url
+          = link_to "delete", feed, method: :delete
+
+    /  = link_to "編集", edit_feed_path(feed)
+
+    %hr
+
+  .main
+    %h2 read items...
+    %br/
+
+    - @items.each do |item|
+      %h3= item.feed.title
+      %h4= item.title
+      %br/
+      - if item.body
+        = strip_tags(item.body.truncate(200))
+        %br/
+      %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "read more", item_path(item)
+      %br/
