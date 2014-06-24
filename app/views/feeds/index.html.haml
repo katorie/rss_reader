@@ -1,7 +1,7 @@
 !!!
 /%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
 %body
-  .side
+  %side
     %h2 following site...
     %br/
 
@@ -16,7 +16,7 @@
 
     %hr
 
-  .main
+  %main
     %h2 read items...
     %br/
 
@@ -29,3 +29,4 @@
         %br/
       %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "read more", item_path(item)
       %br/
+      %hr
