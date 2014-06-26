@@ -4,6 +4,5 @@
 
 = form_for @feed do |f|
   = f.text_field :url
-  = f.submit
-%br
-%button{:type => "button", :class => "btn btn-primary"}= link_to "cancel", feeds_path
+  = f.submit "add", :class => "btn btn-primary"
+  %button{:type => "button", :class => "btn btn-primary"}= link_to "cancel", feeds_path
