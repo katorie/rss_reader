@@ -1,5 +1,9 @@
+%h2 add new site?
+%br
+%h4 please input RSS feed URL
+
 = form_for @feed do |f|
-  = f.label :url
   = f.text_field :url
   = f.submit
-= link_to "キャンセル", feeds_path
+%br
+%button{:type => "button", :class => "btn btn-primary"}= link_to "cancel", feeds_path
