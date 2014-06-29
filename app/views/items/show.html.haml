@@ -1,7 +1,8 @@
-= @item.title
-%br/
-= strip_tags(@item.body)
-%br/
-= link_to "もとを見る", @item.url
-%br/
-= link_to "もどる", feeds_path
+%body
+  .panel.panel-warning
+    .panel-heading
+      %h3.panel-title= @item.title
+    .panel-body
+      %h4= strip_tags(@item.body)
+      %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "see origin site", @item.url
+      %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "return", feeds_path
