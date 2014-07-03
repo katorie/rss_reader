@@ -21,17 +21,8 @@
               %b.caret
             %ul.dropdown-menu
               %li
-                %a{href: "#"} Action
-              %li
-                %a{href: "#"} Another action
-              %li
-                %a{href: "#"} Something else here
-              %li.divider
-              %li.dropdown-header Dropdown header
-              %li
-                %a{href: "#"} Separated link
-              %li
-                %a{href: "#"} One more separated link
+                - @feeds.each do |feed|
+                  %a{href: "/feeds/#{feed.id}"}= feed.title
         %ul.nav.navbar-nav.navbar-right
           %li
             %a{href: "#"} about 
