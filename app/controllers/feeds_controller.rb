@@ -6,6 +6,7 @@ class FeedsController < ApplicationController
 
   def new
     @feed = Feed.new
+    @feeds = Feed.all
   end
 
   def create
@@ -22,6 +23,9 @@ class FeedsController < ApplicationController
   end
 
   def show
+    @feed = Feed.find(params[:id])
+    @items = @feed.items
+    @feeds = Feed.all
   end
 
   def edit

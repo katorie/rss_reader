@@ -2,6 +2,30 @@
 %html
   %head
     %title RSS Reader!
+    .navbar.navbar-default
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: "/feeds"} RSS Reader!
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav
+          %li
+            %a{href: "/feeds/new"} add new site
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              select site 
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                - @feeds.each do |feed|
+                  %a{href: "/feeds/#{feed.id}"}= feed.title
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{href: "#"} about 
+
+
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags

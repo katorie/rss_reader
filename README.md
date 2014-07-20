@@ -5,7 +5,7 @@
 [現在の画面はこんな感じ](https://github.com/katorie/rss_reader/issues/22)
 
 ## Ruby
-'2.1.2'
+'2.1.1'
 
 ## Ruby on Rails
 '3.2.14'
@@ -20,3 +20,8 @@
 4. `rake db:migrate`
 5. `rails server`
 6. open `http://localhost:3000/`
+
+## how to add to crontab
+RSS Reader! uses ['whenever'](https://github.com/javan/whenever)
+When you do `whenever -i`, every hour RSS Reader! gets new feeds. 
+
