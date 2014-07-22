@@ -16,3 +16,6 @@
 
 # Ignore .swp file
 *.swp
+
+# Ignore .secret file
+*.secret
