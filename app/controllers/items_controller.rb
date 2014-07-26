@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def show
-    @items = Item.all
+    @feeds = Feed.all
     @item = Item.find(params[:id])
   end
 
