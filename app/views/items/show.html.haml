@@ -2,6 +2,6 @@
 %br/
 = strip_tags(@item.body)
 %br/
-= link_to "もとを見る", @item.url
+= link_to "もとを見る", @item.url, target: "_blank"
 %br/
 = link_to "もどる", feeds_path
