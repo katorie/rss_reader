@@ -20,10 +20,19 @@ body {
 main {
   width: 700px;
   float: right;
+  h2 {
+    margin-bottom: 30px;
+  }
+  h4 {
+    margin-bottom: 30px;
+  }
 }
 side {
   width: 250px;
   float: left;
+  h2 {
+    margin-bottom: 30px;
+  }
 }
 article,
 aside,

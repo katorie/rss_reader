@@ -1,32 +1,23 @@
-!!!
 /%button{:type => "button", :class => "btn btn-default"}= link_to 'add new site', new_feed_path
-%body
-  %side
-    %h2 following site...
-    %br/
+%side
+  %h2 following site...
+  - @feeds.each do |feed|
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title= feed.title
+      .panel-body
+        %h5= feed.url
+        = link_to "delete", feed, method: :delete
 
-    - @feeds.each do |feed|
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title= feed.title
-        .panel-body
-          %h5= feed.url
-          = link_to "delete", feed, method: :delete
+  /  = link_to "編集", edit_feed_path(feed)
 
-    /  = link_to "編集", edit_feed_path(feed)
-
-  %main
-    %h2 read items...
-    %br/
-
-    - @items.each do |item|
-      .panel.panel-warning
-        .panel-heading
-          %h3.panel-title= item.feed.title
-        .panel-body
-          %h4= item.title
-          %br/
-          - if item.body
-            = strip_tags(item.body.truncate(200))
-            %br/
-          %button{:type => "button", :class => "btn btn-primary btn-sm"}= link_to "read more", item_path(item)
+%main
+  %h2 read items...
+  - @items.each do |item|
+    .panel.panel-warning
+      .panel-heading
+        %h3.panel-title= item.feed.title
+      .panel-body
+        %h4= item.title
+        %p= strip_tags(item.body.to_s.truncate(200))
+        = link_to "read more", item_path(item), class: 'btn btn-primary btn-sm'
