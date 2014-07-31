@@ -1,6 +1,9 @@
 !!!
 %html
   %head
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+  %body
     %title RSS Reader!
     = favicon_link_tag 'favicon.ico'
     .navbar.navbar-default
@@ -9,27 +12,23 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{href: "/feeds"} RSS Reader!
+        = link_to 'RSS Reader!', root_path, class: 'navbar-brand'
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav
           %li
-            %a{href: "/feeds/new"} add new site
+            = link_to 'add new site', new_feed_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              select site 
+              select site
               %b.caret
             %ul.dropdown-menu
               %li
                 - @feeds.each do |feed|
-                  %a{href: "/feeds/#{feed.id}"}= feed.title
+                  = link_to feed.title, feed
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{href: "#"} about 
+            %a{href: "#"} about
 
+    = yield
 
-    = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags
-  
-  %body
-    = yield 
