@@ -25,3 +25,5 @@
 RSS Reader! uses ['whenever'](https://github.com/javan/whenever)
 When you do `whenever -i`, every hour RSS Reader! gets new feeds. 
 
+## Looking forward to your Pull Requests
+RSS Reader! has some issues. I am looking forward to your Pull Requests or your advice to solve those issues. Thank you!
