@@ -41,6 +41,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     curb (0.8.5)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     domain_name (0.5.12)
       unf (>= 0.0.5, < 1.0.0)
@@ -185,6 +186,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.1.1)
   coffee-rails (~> 3.2.1)
+  database_cleaner
   erb2haml
   feed_searcher
   feedjira
