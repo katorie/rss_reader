@@ -50,7 +50,7 @@ describe Feed do
       expect(feed.items.first.body).to eq "hello"
       expect(feed.items.first.title).to eq "This is title"
       expect(feed.items.first.url).to eq "http://example.com/blog/1"
-      expect(feed.items.first.posted_at).to eq published
+      expect(feed.items.first.posted_at.to_i).to eq published.to_i
     end
   end
 end
