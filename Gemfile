@@ -45,8 +45,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'haml-rails'
 
-group :development do
+group :development, :test do
   gem 'erb2haml'
+  gem 'rspec-rails', '3.0.0.beta2'
 end
 
 gem 'whenever', :require => false
