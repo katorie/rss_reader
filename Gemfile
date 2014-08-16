@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'feedjira'
 
 gem 'feed_searcher'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
