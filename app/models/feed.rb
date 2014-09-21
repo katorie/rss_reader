@@ -1,6 +1,4 @@
 class Feed < ActiveRecord::Base
-  attr_accessible :etag, :feed_url, :last_modified, :title, :url
-
   before_save :get_rss
 
   has_many :items, dependent: :destroy  
