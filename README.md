@@ -8,7 +8,7 @@
 '2.1.1'
 
 ## Ruby on Rails
-'3.2.14'
+'4.1.5'
 
 ## Bootstrap
 [Bootswatch: Amelia](http://bootswatch.com/amelia/)
