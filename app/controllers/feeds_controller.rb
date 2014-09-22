@@ -10,7 +10,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.new(params[:feed])
+    @feed = Feed.new(feed_params)
 # models/feed.rbにうつした
 #    feed = Feedzirra::Feed.fetch_and_parse(params[:feed][:url])
 #    @feed.title = feed.title
@@ -47,4 +47,11 @@ class FeedsController < ApplicationController
     redirect_to feeds_path
   end
 
+  private
+
+  def feed_params
+    params.require(:feed).permit(
+      :body, :title, :url, :posted_at
+    )
+  end
 end
