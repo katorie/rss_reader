@@ -18,6 +18,7 @@ class FeedsController < ApplicationController
     if @feed.save
       redirect_to feeds_path  #saveが成功したらindexへ
     else
+      @feeds = Feed.all
       render :new  #失敗したらnew入力へ
     end
   end
