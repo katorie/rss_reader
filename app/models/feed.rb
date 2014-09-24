@@ -1,7 +1,9 @@
 class Feed < ActiveRecord::Base
   before_save :get_rss
 
-  has_many :items, dependent: :destroy  
+  has_many :items, dependent: :destroy
+
+  validates :url, presence: true, uniqueness: true
 
   def update_items!
     feed = Feedjira::Feed.fetch_and_parse(self.url)
