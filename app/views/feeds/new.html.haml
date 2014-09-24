@@ -9,6 +9,7 @@
         - @feed.errors.full_messages.each do |msg|
           %li= msg
 
-  = f.text_field :url
+  %div{:class => "form-group"}
+    = f.text_field :url, :class => "form-control input-lg", :placeholder => 'ex: http://example.com/blog/rss'
   = f.submit "add", :class => "btn btn-primary"
   %button{:type => "button", :class => "btn btn-primary"}= link_to "cancel", feeds_path
