@@ -20,6 +20,6 @@
       .panel-body
         %h4= item.title
         %p= strip_tags(item.body.to_s.truncate(200))
-        = link_to "read more", item_path(item), class: 'btn btn-primary btn-sm'
+        = link_to "もとを見る", item.url, target: "_blank", class: 'btn btn-primary btn-sm'
 
   = paginate @items
