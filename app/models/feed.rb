@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  before_save :get_rss
+  after_validation :get_rss
 
   has_many :items, dependent: :destroy
 
