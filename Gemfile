@@ -50,6 +50,10 @@ gem 'haml-rails'
 group :development, :test do
   gem 'erb2haml'
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
   gem 'database_cleaner'
 end
 

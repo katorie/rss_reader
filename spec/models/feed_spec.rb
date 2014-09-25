@@ -1,6 +1,30 @@
 require 'spec_helper'
 
-describe Feed do
+describe Feed, type: :model do
+
+  it { should have_many(:items).dependent(:destroy) }
+  it { should validate_presence_of :url }
+  it { should validate_uniqueness_of :url }
+
+  describe '#get_rss' do
+    context '他のvalidationエラーがあるとき' do
+      it '#get_rss は呼ばれない' do
+        feed = Feed.new( url: '' )
+        expect(Feedjira::Feed).to_not receive(:fetch_and_parse)
+        expect(feed).to be_invalid
+        expect(feed.errors[:base]).to be_empty
+      end
+    end
+    context '他のvalidationエラーがないとき' do
+      it '#get_rss が呼ばれる' do
+        feed = Feed.new( url: 'http://example.com/blog' )
+        expect(Feedjira::Feed).to receive(:fetch_and_parse).and_return(0)
+        expect(feed).to be_invalid
+        expect(feed.errors[:base]).to be_present
+      end
+    end
+  end
+
   describe '#update_items!' do
     it 'should add items from feed' do
       # Build feed to be tested.

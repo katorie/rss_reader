@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  after_validation :get_rss
+  after_validation :get_rss, if: ->(feed){ feed.errors.empty? }
 
   has_many :items, dependent: :destroy
 
