@@ -36,6 +36,6 @@ class Feed < ActiveRecord::Base
 
   def failed_fetch_feed
     logger.error "failed fetch feed: #{self.url}"
-    errors.add(:base, :failed_fetch_feed)
+    errors.add(:base, I18n.t('errors.messages.failed_fetch_feed'))
   end
 end
