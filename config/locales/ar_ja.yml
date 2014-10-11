@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      feed: RSSフィード
+    attributes:
+      feed:
+        url: URL
