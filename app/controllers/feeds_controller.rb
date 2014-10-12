@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @feeds = Feed.all  #controllarにわたされる
+    @feeds = Feed.all
     @items = Item.includes(:feed).order('posted_at desc').page(params[:page])
   end
 
@@ -11,15 +11,12 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
-# models/feed.rbにうつした
-#    feed = Feedzirra::Feed.fetch_and_parse(params[:feed][:url])
-#    @feed.title = feed.title
 
     if @feed.save
-      redirect_to feeds_path  #saveが成功したらindexへ
+      redirect_to feeds_path
     else
       @feeds = Feed.all
-      render :new  #失敗したらnew入力へ
+      render :new
     end
   end
 
@@ -36,11 +33,12 @@ class FeedsController < ApplicationController
   def update
     @feed = Feed.find(params[:id]) 
     @feed.attributes = params[:feed]
-      if @feed.save
-        redirect_to feeds_path
-      else
-        render :edit
-      end
+
+    if @feed.save
+      redirect_to feeds_path
+    else
+      render :edit
+    end
   end
 
   def destroy
