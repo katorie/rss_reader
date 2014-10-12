@@ -27,8 +27,6 @@ class Feed < ActiveRecord::Base
 
     feed.entries.each do |entry|
       self.items.build({body: entry.content, title: entry.title, url: entry.url, posted_at: entry.published})
-      # create はnew（初期化）とsave（保存）を同時にしてくれる
-      # buildではなくcreateでやりかけたけど、修正
     end
 
     self.title = feed.title
