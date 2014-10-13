@@ -7,9 +7,9 @@
         %h3.panel-title= feed.title
       .panel-body
         %h5= feed.url
-        = link_to "delete", feed, method: :delete
-
-  /  = link_to "編集", edit_feed_path(feed)
+        -if user_signed_in?
+          = link_to "delete", feed, method: :delete
+          = link_to "編集", edit_feed_path(feed)
 
 %main
   %h2 read items...
