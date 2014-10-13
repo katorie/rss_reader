@@ -29,6 +29,11 @@
           %li
             %a{href: "#"} about
 
+    - if notice
+        %p.alert.alert-success= notice
+    - if alert
+        %p.alert.alert-danger= alert
+
     = yield
 
     = javascript_include_tag "application"
