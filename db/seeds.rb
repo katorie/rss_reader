@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# def initialize_master_table(model)
+#   (model.respond_to?(:delete_all!)) ? model.delete_all! : model.destroy_all
+#   model.connection.execute("alter table #{model.table_name} AUTO_INCREMENT = 1;")
+# end
+# module ActiveRecord
+#   class Base
+#     def self.create_once(args)
+#       unless self.exists?(args[:id])
+#         record    = self.new(args, :without_protection => true)
+#         record.id = args[:id]
+#         record.save!
+#       end
+#     end
+#   end
+# end
+# 
+# initialize_master_table(User)
+User.create({email: "yochiyochi@example.jp", password: "yochiyochi"})
