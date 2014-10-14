@@ -1,4 +1,6 @@
 class FeedsController < ApplicationController
+  before_filter :accessible_check, :except => [:index, :show]
+
   def index
     @feeds = Feed.all
     @items = Item.includes(:feed).order('posted_at desc').page(params[:page])
@@ -53,4 +55,9 @@ class FeedsController < ApplicationController
       :body, :title, :url, :posted_at
     )
   end
+
+  def accessible_check
+    raise unless user_signed_in?
+  end
+
 end

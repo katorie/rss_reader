@@ -16,7 +16,7 @@
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav
           %li
-            = link_to 'add new site', new_feed_path
+            = link_to 'add new site', new_feed_path if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               select site
@@ -28,6 +28,16 @@
         %ul.nav.navbar-nav.navbar-right
           %li
             %a{href: "#"} about
+          %li
+            - if user_signed_in?
+              = link_to('Logout', destroy_user_session_path, :method => :delete)
+            - else
+              = link_to('Login', new_user_session_path)
+
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
 
     = yield
 
