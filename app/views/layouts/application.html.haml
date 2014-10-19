@@ -27,7 +27,7 @@
                   = link_to feed.title, feed
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{href: "#"} about
+            = link_to 'about', about_index_path
           %li
             - if user_signed_in?
               = link_to('Logout', destroy_user_session_path, :method => :delete)
