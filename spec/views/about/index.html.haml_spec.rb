@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe "about/index.html.haml", :type => :view do
   pending "add some examples to (or delete) #{__FILE__}"
