@@ -56,11 +56,14 @@ gem 'haml-rails'
 group :development, :test do
   gem 'erb2haml'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 gem 'whenever', :require => false
