@@ -12,7 +12,7 @@ class Feed < ActiveRecord::Base
 
     feed.entries.each do |entry|
       unless items.where(url: entry.url).exists?
-        items.create!({body: entry.content, title: entry.title, url: entry.url, posted_at: entry.published})
+        items.create!({body: entry.content || entry.summary, title: entry.title, url: entry.url, posted_at: entry.published})
         logger.info "created! #{{body: entry.content, title: entry.title, url: entry.url, posted_at: entry.published}.inspect}"
       end
     end
@@ -26,7 +26,7 @@ class Feed < ActiveRecord::Base
     return failed_fetch_feed unless feed.respond_to?(:entries)
 
     feed.entries.each do |entry|
-      self.items.build({body: entry.content, title: entry.title, url: entry.url, posted_at: entry.published})
+      self.items.build({body: entry.content || entry.summary, title: entry.title, url: entry.url, posted_at: entry.published})
     end
 
     self.title = feed.title
