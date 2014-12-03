@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'spec_helper'
 
 describe Feed, type: :model do
@@ -97,9 +98,6 @@ describe Feed, type: :model do
           double(entries: entries)
         }
         feed.update_items!
-
-        # Assert expected behavior: One item will be made for the feed and it should
-        # have values in the entry.
         expect(feed.items.first.body).to eq "hello"
         expect(feed.items.first.title).to eq "This is title"
         expect(feed.items.first.url).to eq "http://example.com/blog/1"
