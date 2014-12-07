@@ -1,6 +1,6 @@
 %h2 add new site?
 %br
-%h4 please input RSS feed URL
+%h4 please input RSS feed URL and Author
 
 = form_for @feed do |f|
   - if @feed.errors.any?
@@ -10,6 +10,7 @@
           %li= msg
 
   %div{:class => "form-group"}
-    = f.text_field :url, :class => "form-control input-lg", :placeholder => 'ex: http://example.com/blog/rss'
+    = f.text_field :url,    :class => "form-control input-lg", :placeholder => 'ex: http://example.com/blog/rss'
+    = f.text_field :author, :class => "form-control input-lg", :placeholder => 'ex: Alice or @alice1234'
   = f.submit "add", :class => "btn btn-primary"
   %button{:type => "button", :class => "btn btn-primary"}= link_to "cancel", feeds_path

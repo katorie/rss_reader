@@ -1,4 +1,4 @@
-%h2= @feed.title
+%h2= "#{@feed.title} by #{@feed.author}"
 %hr
 -@items.each do |item|
   .panel.panel-warning
