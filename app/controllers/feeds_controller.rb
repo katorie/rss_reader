@@ -35,7 +35,7 @@ class FeedsController < ApplicationController
 
   def update
     @feed = Feed.find(params[:id]) 
-    @feed.attributes = params[:feed]
+    @feed.attributes = feed_params
 
     if @feed.save
       redirect_to feeds_path
