@@ -30,6 +30,7 @@ class FeedsController < ApplicationController
 
   def edit
     @feed = Feed.find(params[:id])
+    @feeds = Feed.all
   end
 
   def update
