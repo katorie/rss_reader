@@ -52,7 +52,7 @@ class FeedsController < ApplicationController
 
   def feed_params
     params.require(:feed).permit(
-      :body, :title, :url, :posted_at
+      :body, :title, :url, :author, :posted_at
     )
   end
 

@@ -4,7 +4,7 @@
   - @feeds.each do |feed|
     .panel.panel-default
       .panel-heading
-        %h3.panel-title= feed.title
+        %h3.panel-title= "#{feed.title} by #{feed.author}"
       .panel-body
         %h5= feed.url
         -if user_signed_in?
@@ -16,7 +16,7 @@
   - @items.each do |item|
     .panel.panel-warning
       .panel-heading
-        %h3.panel-title= item.feed.title
+        %h3.panel-title= "#{item.feed.title} by #{item.feed.author}"
       .panel-body
         %h4= item.title
         %p= strip_tags(item.body.to_s.truncate(200))
