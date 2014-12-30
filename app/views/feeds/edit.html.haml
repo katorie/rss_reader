@@ -1,5 +1,7 @@
 = form_for @feed do |f|
   = f.label :url
   = f.text_field :url
+  = f.label :author
+  = f.text_field :author
   = f.submit
 = link_to "キャンセル", feeds_path
