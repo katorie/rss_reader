@@ -9,7 +9,7 @@
         %h5= feed.url
         -if user_signed_in?
           = link_to "delete", feed, method: :delete
-          = link_to "編集", edit_feed_path(feed)
+          = link_to "edit", edit_feed_path(feed)
 
 %main
   %h2 read items...
