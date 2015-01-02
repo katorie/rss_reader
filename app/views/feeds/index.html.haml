@@ -5,7 +5,7 @@
       .panel-heading
         %h3.panel-title= "#{feed.title} by #{feed.author}"
       .panel-body
-        %h5= "Last Updated: #{Item.where(feed_id: feed.id).first.posted_at}"
+        %h5= "Last Updated: #{Item.where(feed_id: feed.id).order('posted_at desc').first.posted_at}"
         -if user_signed_in?
           = link_to "delete", feed, method: :delete
           = link_to "edit", edit_feed_path(feed)
