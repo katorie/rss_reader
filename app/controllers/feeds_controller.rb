@@ -5,7 +5,7 @@ class FeedsController < ApplicationController
     @feeds = Feed.all.order(:author).map { |feed|
       { title:      feed.title,
         author:     feed.author,
-        posted_at:  Item.where(feed_id: feed.id).order('posted_at desc').first.posted_at
+        posted_at:  Item.where(feed_id: feed.id).order('posted_at desc').first.posted_at.to_s(:date)
       }
     }
     @items = Item.includes(:feed).order('posted_at desc').page(params[:page])
