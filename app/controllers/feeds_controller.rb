@@ -2,10 +2,13 @@ class FeedsController < ApplicationController
   before_filter :accessible_check, :except => [:index, :show]
 
   def index
+    last_updated_times = Item.group(:feed_id).maximum(:updated_at)
+
     @feeds = Feed.all.order(:author).map { |feed|
-      { title:      feed.title,
+      { id:         feed.id,
+        title:      feed.title,
         author:     feed.author,
-        posted_at:  Item.where(feed_id: feed.id).order('posted_at desc').first.posted_at.to_s(:date)
+        posted_at:  last_updated_times[feed.id]
       }
     }
     @items = Item.includes(:feed).order('posted_at desc').page(params[:page])
