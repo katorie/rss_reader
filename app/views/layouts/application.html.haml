@@ -24,7 +24,7 @@
             %ul.dropdown-menu
               %li
                 - @feeds.each do |feed|
-                  = link_to feed.title, feed
+                  = link_to feed[:title], feed
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to 'about', about_index_path
