@@ -12,11 +12,9 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'whenever', :require => false
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 group :development do
   gem 'sqlite3'
