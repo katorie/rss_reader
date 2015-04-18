@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails'
+gem 'rails', '4.1.5'
 gem 'jquery-rails'
 gem 'feedjira'
 gem 'feed_searcher'
@@ -10,16 +10,11 @@ gem 'kaminari-bootstrap'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'haml-rails'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-
-group :development do
-  gem 'sqlite3'
-  gem 'pry-rails'
-end
 
 group :production do
   gem 'pg'
@@ -30,6 +25,8 @@ group :development, :test do
   gem 'erb2haml'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :test do
