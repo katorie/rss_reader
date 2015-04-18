@@ -33,6 +33,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'ffaker'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'launchy'
