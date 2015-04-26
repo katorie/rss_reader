@@ -11,7 +11,7 @@ class FeedsController < ApplicationController
         posted_at:  last_updated_times[feed.id]
       }
     }
-    feed_ids = params[:id] ? [params[:id]] : @feeds.map {|f| f[:id]}
+    feed_ids = params[:id] ? params[:id] : @feeds.map {|f| f[:id]}
     @items = Item.includes(:feed).where(feeds: {id: feed_ids}).order('posted_at desc').page(params[:page])
   end
 
