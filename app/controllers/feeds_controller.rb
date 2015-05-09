@@ -11,7 +11,8 @@ class FeedsController < ApplicationController
         posted_at:  last_updated_times[feed.id]
       }
     }
-    @items = Item.includes(:feed).order('posted_at desc').page(params[:page])
+    feed_ids = params[:id] ? params[:id] : @feeds.map {|f| f[:id]}
+    @items = Item.includes(:feed).where(feeds: {id: feed_ids}).order('posted_at desc').page(params[:page])
   end
 
   def new
@@ -42,7 +43,7 @@ class FeedsController < ApplicationController
   end
 
   def update
-    @feed = Feed.find(params[:id]) 
+    @feed = Feed.find(params[:id])
     @feed.attributes = feed_params
 
     if @feed.save

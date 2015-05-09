@@ -76,6 +76,7 @@ GEM
       curb (~> 0.8)
       loofah (~> 2.0)
       sax-machine (~> 1.0)
+    ffaker (2.0.0)
     haml (4.1.0.beta.1)
       tilt
     haml-rails (0.5.3)
@@ -307,6 +308,7 @@ DEPENDENCIES
   factory_girl_rails
   feed_searcher
   feedjira
+  ffaker
   haml-rails
   jquery-rails
   kaminari
