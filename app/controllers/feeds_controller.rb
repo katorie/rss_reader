@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_filter :accessible_check, :except => [:index, :show]
+  before_action :accessible_check, :except => [:index, :show]
 
   def index
     last_updated_times = Item.group(:feed_id).maximum(:updated_at)
