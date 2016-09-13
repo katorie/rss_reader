@@ -7,7 +7,7 @@
       .panel-body
         %h5= "Last Updated: #{feed[:posted_at]}"
         -if user_signed_in?
-          = link_to "delete", feed, method: :delete
+          = link_to "delete", feed_path(feed), method: :delete
           = link_to "edit", edit_feed_path(feed[:id])
 
 %main
