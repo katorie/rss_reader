@@ -13,7 +13,7 @@ RSpec.describe FeedsController, type: :controller do
     end
 
     context 'filtered by feed' do
-      before(:each) { get :index, id: feed_a.id }
+      before(:each) { get :index, params: { id: feed_a.id } }
       it { expect(assigns(:items)).to match_array([item_a]) }
     end
   end
