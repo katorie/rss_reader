@@ -5,10 +5,10 @@
 Deployed as [yochiyochi yomyom](http://yochiyochi-yomyom.herokuapp.com/)
 
 ## Ruby
-'2.2.2'
+'2.3.1'
 
 ## Ruby on Rails
-'4.1.5'
+'5.0.0'
 
 ## Bootstrap
 [Bootswatch: Amelia](http://bootswatch.com/amelia/)
@@ -17,8 +17,8 @@ Deployed as [yochiyochi yomyom](http://yochiyochi-yomyom.herokuapp.com/)
 1. `git clone https://github.com/katorie/rss_reader.git`
 2. `cd rss_reader`
 3. `bundle install`
-4. `rake db:migrate`
-5. `rake db:seed`
+4. `bin/rails db:migrate`
+5. `bin/rails db:seed`
 6. `rails server`
 7. open `http://localhost:3000/`
 
