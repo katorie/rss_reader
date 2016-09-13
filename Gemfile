@@ -34,5 +34,6 @@ group :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'launchy'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers'
 end
