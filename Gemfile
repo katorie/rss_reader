@@ -2,19 +2,19 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rails', '~> 5.0.0'
-gem 'jquery-rails'
-gem 'feedjira'
+
+gem 'bootstrap-sass'
+gem 'coffee-rails'
+gem 'devise'
 gem 'feed_searcher'
+gem 'feedjira'
+gem 'haml-rails'
+gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-gem 'devise'
-gem 'bootstrap-sass'
-gem 'haml-rails'
-gem 'whenever', require: false
-
 gem 'sass-rails'
-gem 'coffee-rails'
 gem 'uglifier'
+gem 'whenever', require: false
 
 group :production do
   gem 'pg'
@@ -22,17 +22,17 @@ group :production do
 end
 
 group :development, :test do
-  gem 'erb2haml'
-  gem 'rspec-rails'
   gem 'capybara'
-  gem 'sqlite3'
+  gem 'erb2haml'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :test do
-  gem 'ffaker'
-  gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
