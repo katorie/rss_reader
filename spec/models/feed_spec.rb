@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe Feed, type: :model do
-
-  it { should have_many(:items).dependent(:destroy) }
-  it { should validate_presence_of :url }
-  it { should validate_uniqueness_of :url }
-
   describe '#get_rss' do
     context '他のvalidationエラーがあるとき' do
       it '#get_rss は呼ばれない' do

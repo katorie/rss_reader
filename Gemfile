@@ -35,5 +35,4 @@ group :test do
   gem 'ffaker'
   gem 'launchy'
   gem 'rails-controller-testing'
-  gem 'shoulda-matchers'
 end
