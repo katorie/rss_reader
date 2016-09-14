@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
 
-  before_filter :get_feeds
+  before_action :get_feeds
 
   def new
     super
