@@ -1,10 +1,10 @@
 language: ruby
 
 before_script:
-  - bundle exec rake db:create
-  - RAILS_ENV=test bundle exec rake db:migrate
+  - bin/rails db:create
+  - RAILS_ENV=test bin/rails db:migrate
 
 script:
   - bundle exec rspec
 rvm:
-  - 2.2.2
+  - 2.3.1
