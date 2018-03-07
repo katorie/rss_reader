@@ -1,0 +1,10 @@
+ja:
+  devise:
+    sessions:
+      user:
+        signed_in: ログインしました。
+        signed_out: ログアウトしました。
+    failure:
+      user:
+        not_found_in_database: メールアドレスかパスワードが違います。
+        invalid: メールアドレスかパスワードが違います。
