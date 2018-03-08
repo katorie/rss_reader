@@ -17,7 +17,7 @@ gem 'uglifier'
 gem 'whenever', require: false
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.21.0'
   gem 'rails_12factor'
 end
 
