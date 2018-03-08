@@ -5,7 +5,7 @@
 Deployed as [yochiyochi yomyom](http://yochiyochi-yomyom.herokuapp.com/)
 
 ## Ruby
-'2.3.1'
+'2.5.0'
 
 ## Ruby on Rails
 '5.0.0'
